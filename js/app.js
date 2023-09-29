@@ -1,3 +1,15 @@
+// Task 3.0 instructions executed here:
+
+const menuLinks = [
+    {text: 'about', href: '/about'},
+    {text: 'catalog', href: '/catalog'},
+    {text: 'orders', href: '/orders'},
+    {text: 'account', href: '/account'},
+];
+
+
+
+
 // Task 1.0
 // Select and cache the <main> element in a variable named mainEl.
 
@@ -42,6 +54,7 @@ mainEl.appendChild(h1El);
 // Task 1.3
 // Add a class of flex-ctr to mainEl.
 
+// go to mainEl and go to the classList property then use the add() method to add in "flex-ctr" as a class
 mainEl.classList.add("flex-ctr");
 
 
@@ -75,8 +88,48 @@ topMenuEl.style.backgroundColor = "var(--top-menu-bg)";
 
 // Task 2.3
 
+// go to topMenuEl and go to the classList property then use the add() method to add "flex-around" as a class of the element
 topMenuEl.classList.add("flex-around");
 
 
 
-// 
+// Task 3.0
+// Copy the following data structure to the top of script.js:
+// Assuming that script.js is the same as this app.js file
+
+// const menuLinks = [
+//     {text: 'about', href: '/about'},
+//     {text: 'catalog', href: '/catalog'},
+//     {text: 'orders', href: '/orders'},
+//     {text: 'account', href: '/account'},
+// ];
+
+
+
+// Task 3.1
+// Iterate over the entire menuLinks array and for each "link" object:
+
+// Create an <a> element.
+
+// On the new element, add an href attribute with its value set to the href property of the "link" object.
+
+// Set the new element's content to the value of the text property of the "link" object.
+
+// Append the new element to the topMenuEl element.
+
+// iterate through menuLinks calling each object within "link"
+menuLinks.forEach(function(link) {
+    
+    // for each link, define a variable named newLink which is a newly created <a> element 
+    const newLink = document.createElement("a");
+
+    // in newLink, leverage the setAttribute() method to set an href attribute to the newly created <a> element named newLink
+    newLink.setAttribute("href", "");
+
+    // set the textContent property of newLink to the text property of the link object
+    newLink.textContent = link.text;
+    
+    // append newLink to topMenuEl as a child element
+    topMenuEl.appendChild(newLink);
+});
+
