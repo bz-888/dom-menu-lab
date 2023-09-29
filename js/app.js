@@ -1,11 +1,34 @@
-// Task 3.0 instructions executed here:
+// Task 5.0 instructions executed here:
 
 const menuLinks = [
     {text: 'about', href: '/about'},
-    {text: 'catalog', href: '/catalog'},
-    {text: 'orders', href: '/orders'},
-    {text: 'account', href: '/account'},
+    {text: 'catalog', href: '#', subLinks: [
+      {text: 'all', href: '/catalog/all'},
+      {text: 'top selling', href: '/catalog/top'},
+      {text: 'search', href: '/catalog/search'},
+    ]},
+    {text: 'orders', href: '#' , subLinks: [
+      {text: 'new', href: '/orders/new'},
+      {text: 'pending', href: '/orders/pending'},
+      {text: 'history', href: '/orders/history'},
+    ]},
+    {text: 'account', href: '#', subLinks: [
+      {text: 'profile', href: '/account/profile'},
+      {text: 'sign out', href: '/account/signout'},
+    ]},
 ];
+
+
+
+
+// Task 3.0 instructions executed here:
+
+// const menuLinks = [
+//     {text: 'about', href: '/about'},
+//     {text: 'catalog', href: '/catalog'},
+//     {text: 'orders', href: '/orders'},
+//     {text: 'account', href: '/account'},
+// ];
 
 
 
@@ -178,3 +201,80 @@ subMenuEl.classList.add("flex-around");
 
 
 
+// Task 4.4
+// Set the CSS position property of subMenuEl to the value of absolute.
+
+// go to the subMenuEl element, enter the style property, enter the position property and set the position property's value to "absolute"
+subMenuEl.style.position = "absolute";
+
+
+
+// Task 4.5
+// Set the CSS top property of subMenuEl to the value of 0.
+
+// go to the subMenuEl element, grab the style property, grab the top property and set the top property's value to 0
+subMenuEl.style.top = "0";
+
+
+
+// Task 5.0
+// Replace the menuLinks array in script.js with this version that adds sub-menu data:
+
+// const menuLinks = [
+//     {text: 'about', href: '/about'},
+//     {text: 'catalog', href: '#', subLinks: [
+//       {text: 'all', href: '/catalog/all'},
+//       {text: 'top selling', href: '/catalog/top'},
+//       {text: 'search', href: '/catalog/search'},
+//     ]},
+//     {text: 'orders', href: '#' , subLinks: [
+//       {text: 'new', href: '/orders/new'},
+//       {text: 'pending', href: '/orders/pending'},
+//       {text: 'history', href: '/orders/history'},
+//     ]},
+//     {text: 'account', href: '#', subLinks: [
+//       {text: 'profile', href: '/account/profile'},
+//       {text: 'sign out', href: '/account/signout'},
+//     ]},
+// ];
+
+
+
+// Task 5.1
+// Select and cache all of the <a> elements inside of topMenuEl in a variable named topMenuLinks.
+
+// define a variable named topMenuLinks and populate the variable with the <a> elements from topMenuEl using querySelectorAll to select multiple elements
+const topMenuLinks = topMenuEl.querySelectorAll("a");
+
+// checking topMenuLinks for <a> elements
+// console.log(topMenuLinks);
+
+
+// Declare a global showingSubMenu variable and initialize it to false;
+let showingSubMenu = false;
+
+
+
+// Task 5.2
+
+// Attach a delegated 'click' event listener to topMenuEl.
+topMenuEl.addEventListener("click", function(evt) {
+
+    // The first line of code of the event listener function should call the event object's preventDefault() method.
+    evt.preventDefault();
+
+    // checking how tagName works
+    // console.log(evt.target.tagName);
+    
+    // The second line of code function should immediately return if the element clicked was not an <a> element.
+    // 👀 Hint: DOM elements have a tagName property.
+    if (evt.target.tagName === "A") {
+    
+        // console.log the content of the <a> to verify the handler is working.
+        console.log(evt.target);
+    }
+});
+
+
+
+// Task 5.3
