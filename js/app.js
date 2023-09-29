@@ -128,8 +128,53 @@ menuLinks.forEach(function(link) {
 
     // set the textContent property of newLink to the text property of the link object
     newLink.textContent = link.text;
-    
+
     // append newLink to topMenuEl as a child element
     topMenuEl.appendChild(newLink);
 });
+
+
+
+// --Part 1 completed above--
+
+
+
+// --Part 2 found below--
+
+
+
+// Task 4.0
+// Select and cache the <nav id="sub-menu"> element in a variable named subMenuEl.
+
+// define a variable named subMenuEl and assign the value of the variable as the element with the id of "sub-menu"
+const subMenuEl = document.getElementById("sub-menu");
+
+// check subMenuEl
+// console.log(subMenuEl);
+
+
+
+// Task 4.1
+// Set the height subMenuEl element to be 100%.
+
+// go to subMenuEl element, enter the style property, then enter the height sub-property and set the value of height to 100%
+subMenuEl.style.height = "100%"
+
+
+
+// Task 4.2
+// Set the background color of subMenuEl using the --sub-menu-bg CSS custom property.
+
+// go to subMenuEl element, go inside to the property of style, go inside to the sub-property of backgroundColor and set its value equal to the CSS element of --sub-menu-bg
+subMenuEl.style.backgroundColor = "var(--sub-menu-bg)"
+
+
+
+// Task 4.3
+// Add the class of flex-around to the subMenuEl element.
+
+// go to the subMenuEl element and go into the classList property and leverage the method of add() to add the "flex-around" value as a className of the element
+subMenuEl.classList.add("flex-around");
+
+
 
