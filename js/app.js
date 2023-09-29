@@ -43,3 +43,40 @@ mainEl.appendChild(h1El);
 // Add a class of flex-ctr to mainEl.
 
 mainEl.classList.add("flex-ctr");
+
+
+
+// Task 2.0
+// Select and cache the <nav id="top-menu"> element in a variable named topMenuEl.
+
+// define variable named topMenuEl and assign the element with the ID of "top-menu" to the variable
+const topMenuEl = document.getElementById("top-menu");
+
+// check topMenuEl
+// console.log(topMenuEl);
+
+
+
+// Task 2.1
+// Set the height topMenuEl element to be 100%.
+
+// go into the topMenuEl element, go to the style property, go to the height property within the style object and set the value of height to 100%
+topMenuEl.style.height = "100%";
+
+
+
+// Task 2.2
+// Set the background color of topMenuEl using the --top-menu-bg CSS custom property.
+
+// go into the topMenuEl element and go into the style property, inside the style properpty, go to the backgroundColor property and set the value of that property to "var(--top-menu-bg)" as defined in the CSS file
+topMenuEl.style.backgroundColor = "var(--top-menu-bg)";
+
+
+
+// Task 2.3
+
+topMenuEl.classList.add("flex-around");
+
+
+
+// 
