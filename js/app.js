@@ -349,6 +349,48 @@ topMenuEl.addEventListener("click", function(event) {
     // })
 
 
-    
+    // Task 5.7
+    // Next in the event listener...
+
+    // If showingSubMenu is true:
+
+    // Call a buildSubMenu function passing to it the subLinks array for the clicked <a> element.
+    // Set the CSS top property of subMenuEl to 100%.
+    // Otherwise (showingSubMenu is false):
+
+    // Set the CSS top property of subMenuEl to 0.
+    // Since the About link has been clicked, set mainEl.innerHTML to '<h1>about</h1>'.
+
+    if (showingSubMenu === true) {
+        const clickedSubArray = menuLink.subLinks;
+        buildSubMenu(clickedSubArray);
+        subMenuEl.style.top = "100%";
+    } else {
+        subMenuEl.style.top = "0%";
+        mainEl.innerHTML = "<h1>about</h1>";
+    };
+
+
+    // Task 5.8
+    // Code the buildSubMenu function so that it:
+
+    // Clears the contents of subMenuEl.
+    // Iterates over the subLinks array passed as an argument; and for each "link" object:
+    // Create an <a> element.
+    // On the new element, add an href attribute with its value set to the href property of the "link" object.
+    // Set the new element's content to the value of the text property of the "link" object.
+    // Append the new element to the subMenuEl element.
+
+    function buildSubMenu(subLinksInput) {
+        subMenuEl.textContent = "";
+        subLinksInput.forEach(function(subLink) {
+            const newEl = document.createElement("a");
+            newEl.setAttribute("href", subLink.href);
+            newEl.textContent = subLink.text;
+            subMenuEl.appendChild(newEl);
+        });
+    };
+
+    // progress check
 
 });
