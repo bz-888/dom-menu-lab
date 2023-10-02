@@ -308,7 +308,7 @@ topMenuEl.addEventListener("click", function(event) {
     // Hint: Removing a non-existent class from an element does not cause an error, so just remove it!
     
     topMenuLinks.forEach(function(topMenuLink) {
-        topMenuLink.className = "";
+        topMenuLink.classList.remove("active");
     });
 
 
@@ -393,4 +393,49 @@ topMenuEl.addEventListener("click", function(event) {
 
     // progress check
 
+
+
+    // Task 6.0
+    // Attach a delegated 'click' event listener to subMenuEl.
+    
+    // The first line of code of the event listener function should call the event object's preventDefault() method.
+    
+    // The second line of code function should immediately return if the element clicked was not an <a> element.
+    
+    // console.log the content of the <a> to verify the handler is working.
+    
+    subMenuEl.addEventListener("click", function(event) {
+        event.preventDefault();
+    
+        if (event.target.tagName !== "A") {
+            return;
+        };
+    
+        console.log(event.target.text);
+    
+    
+        // Task 6.1
+        // Next, subMenuEl's event listener should:
+        
+        // Set showingSubMenu to false.
+        // Set the CSS top property of subMenuEl to 0.
+    
+        showingSubMenu = false;
+        subMenuEl.style.top = "0";
+    
+    
+        // Task 6.2
+        // Next, subMenuEl's event listener should remove the class name of active from each <a> element in topMenuLinks - whether the active class exists or not.
+    
+        topMenuLinks.forEach(function(link) {
+            link.classList.remove("active");
+        });
+    
+    
+        // Task 6.3
+        // Next, subMenuEl's event listener should update the contents of mainEl to the contents of the <a> element, within an <h1>, clicked within subMenuEl.
+    
+        h1El.textContent = event.target.text;
+    
+    });
 });
